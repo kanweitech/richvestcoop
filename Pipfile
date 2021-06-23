@@ -20,6 +20,7 @@ rave-python = "*"
 celery = "*"
 django-celery-email = "*"
 whitenoise = "*"
+gunicorn = "*"
 
 [dev-packages]
 
