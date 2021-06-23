@@ -19,6 +19,7 @@ twilio = "*"
 rave-python = "*"
 celery = "*"
 django-celery-email = "*"
+whitenoise = "*"
 
 [dev-packages]
 
