@@ -18,7 +18,7 @@ from acctmang.errors import ErrorHandlingCard
 from acctmang.tasks import reserve_nuban
 
 # from richvestcoop.settings import twilio_client
-# from knox.models import AuthToken
+from knox.models import AuthToken
 from django.utils import timezone
 # from richvestcoop.mailer import Mailer
 # mail = Mailer()
@@ -117,7 +117,7 @@ class PhoneAuthAPI(APIView):
             )
 
             message = twilio_client.messages.create(
-                body="Wrent Authentication code: {}".format(auth_code),
+                body="Richvestcoop Authentication code: {}".format(auth_code),
                 from_="+15138132347",
                 to=phone_number
             )
@@ -181,7 +181,7 @@ class AuthCodeAPI(APIView):
 # CHECK TXREF
 class TxrefAPI(APIView):
     """
-    API view to Checks and Verify txref success for Flutterwave Payment.
+    API view to Check and Verify txref success for Flutterwave Payment.
 
     Expected fields:
     1. `txref` : str

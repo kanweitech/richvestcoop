@@ -21,6 +21,7 @@ celery = "*"
 django-celery-email = "*"
 whitenoise = "*"
 gunicorn = "*"
+django-rest-knox = "*"
 
 [dev-packages]
 

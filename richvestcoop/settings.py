@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'acctmang',
     'drf_yasg',
     'corsheaders',
+    'knox',
 ]
 
 MIDDLEWARE = [
@@ -172,3 +173,5 @@ REST_FRAMEWORK = {
 }
 
 REST_FRAMEWORK = { 'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema' }
+
+REST_FRAMEWORK = {"DEFAULT_AUTHENTICATION_CLASSES": ("knox.auth.TokenAuthentication",)}
