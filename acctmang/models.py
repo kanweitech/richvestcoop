@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import PermissionsMixin
 from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
-from.checkers import check_number
+from .checkers import check_number
 from django.db.models.signals import post_save
 from django.urls import reverse
 from decimal import Decimal
@@ -70,7 +70,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 	phone_number = models.CharField(max_length=15, unique=True)
 	first_name = models.CharField("First Name", max_length=100)
 	last_name = models.CharField("Last Name", max_length=100)
-	image_url = models.URLField(default="https://res.cloudinary.com/olamigoke/image/upload/v1620480457/Wrent/profile_picture_jb3g6m.png")
+	image_url = models.URLField(default="https://res.cloudinary.com/olamigoke/image/upload/v1620480457/Wallet/profile_picture_jb3g6m.png")
 	nuban = models.CharField(max_length=20, default="*** *** ***")
 	is_staff = models.BooleanField("staff status", default=False)
 	is_active = models.BooleanField("active", default=True)
@@ -96,7 +96,7 @@ class UserBank(models.Model):
 	user = models.OneToOneField(User, on_delete=models.PROTECT, related_name="bank")
 	bank_name = models.CharField(max_length=100)
 	bank_account_number = models.CharField(max_length=100)
-	custmer_account_name = models.CharField(max_length=100)
+	customer_account_name = models.CharField(max_length=100)
 
 	def __str__(self):
 		return "{} {}".format(self.user, self.bank_name)
